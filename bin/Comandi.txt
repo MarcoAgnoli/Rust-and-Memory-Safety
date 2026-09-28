@@ -1,0 +1,13 @@
+Per compilare i programmi C: 
+gcc -g -O0 -Wall -DINCLUDEMAIN -I testcasesupport testcases/CWE121_Stack_Based_Buffer_Overflow__char_type_overrun_memcpy_01.c testcasesupport/io.c -o CWE121_C
+gcc -g -O0 -Wall -DINCLUDEMAIN -I testcasesupport testcases/CWE122_Heap_Based_Buffer_Overflow__char_type_overrun_memcpy_01.c testcasesupport/io.c -o CWE122_C
+Per vedere che esce con errore, da powershell, scrivi $LASTEXITCODE : il valore "-1073741819" corrisponde a 0xC0000005" Access Violation
+gcc -g -O0 -Wall -DINCLUDEMAIN -I testcasesupport testcases/CWE415_Double_Free__malloc_free_char_01.c testcasesupport/io.c -o CWE415_C
+gcc -g -O0 -Wall -DINCLUDEMAIN -I testcasesupport testcases/CWE416_Use_After_Free__malloc_free_char_01.c testcasesupport/io.c -o CWE416_C
+gcc -g -O0 -Wall -DINCLUDEMAIN -I testcasesupport testcases/CWE562_Return_of_Stack_Variable_address__return_buf_01.c testcasesupport/io.c -o CWE562_C
+
+
+Per compilare i programmi Rust (ricorda che il CWE562 non compila apposta):
+rustc Rust/CWE121.rs -o CWE121_Rust
+rustc Rust/CWE415.rs -o CWE415_Rust
+rustc Rust/CWE416.rs -o CWE416_Rust
